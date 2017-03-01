@@ -29,6 +29,8 @@ def smalltreasure():
             dead("You're too greedy, so you die in the cave.")
     except TypeError:
             dead("You have to enter a number!")
+    except ValueError:
+            dead("You have to enter a number!")
 
 def treasure():
   print """This room is full of jewels, scrolls, a crown, and other treasure.
