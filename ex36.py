@@ -14,23 +14,21 @@ def tunnel2():
 def smalltreasure():
     print "You see a room with a chest full of gold bars. How many do you take?"
     choice = raw_input("> " )
-    if isinstance(choice, int):
-        if choice < 0:
+    try:
+        how_much = int(choice)
+        if how_much < 0:
             print "What, you're donating gold? Okay then!"
             exit()
-        if choice == 0:
+        elif how_much == 0:
             print "If you're sure you don't want any, okay!"
             exit()
-        elif 1 <= choice <= 25:
+        elif 1 <= how_much <= 25:
             print "Okay, they're heavy but you can carry them. Good job!"
             exit()
-         else:
-            dead("You die, weighed down by the gold.")
-    elif isinstance(choice, int) != True:
-        dead("You have to enter a number.")
-    else:
-        dead("You're too greedy, so you die in the cave.")
-    
+        else:
+            dead("You're too greedy, so you die in the cave.")
+    except TypeError:
+            dead("You have to enter a number!")
 
 def treasure():
   print """This room is full of jewels, scrolls, a crown, and other treasure.
