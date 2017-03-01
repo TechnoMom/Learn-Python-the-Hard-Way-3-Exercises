@@ -24,6 +24,8 @@ def smalltreasure():
         elif 1 <= choice <= 25:
             print "Okay, they're heavy but you can carry them. Good job!"
             exit()
+         else:
+            dead("You die, weighed down by the gold.")
     elif isinstance(choice, int) != True:
         dead("You have to enter a number.")
     else:
